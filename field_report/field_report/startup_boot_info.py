@@ -6,7 +6,7 @@ from frappe.exceptions import DoesNotExistError
 from frappe.utils import now_datetime
 
 def cached_boot_info(bootinfo):
-	global_config = json.loads(frappe.get_doc("Field App Config", '').json_config)
+	global_config = json.loads(frappe.get_doc("Field App Config", '').json_config or '{}')
 
 	bootinfo.field_app = frappe._dict({
 		'config': global_config,
@@ -51,3 +51,8 @@ def on_session_creation(login_manager):
 
 		device_obj.ignore_permissions = True
 		device_obj.save()
+
+		frappe.db.commit()
+
+		if not device_obj.enabled == '1':
+			frappe.throw("Device not approved!")

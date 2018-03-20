@@ -10,6 +10,21 @@
  "document_type": "Master", 
  "fields": [
   {
+   "default": "0", 
+   "fieldname": "enabled", 
+   "fieldtype": "Check", 
+   "label": "Enabled", 
+   "permlevel": 0, 
+   "precision": ""
+  }, 
+  {
+   "fieldname": "device_name", 
+   "fieldtype": "Data", 
+   "label": "Device Name", 
+   "permlevel": 0, 
+   "precision": ""
+  }, 
+  {
    "default": "{}", 
    "fieldname": "json_config", 
    "fieldtype": "Small Text", 
@@ -135,7 +150,7 @@
  "is_submittable": 0, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2016-04-06 14:14:44.492863", 
+ "modified": "2018-03-20 13:15:19.764265", 
  "modified_by": "Administrator", 
  "module": "Field Report", 
  "name": "Field App Device", 
@@ -155,7 +170,7 @@
    "print": 0, 
    "read": 1, 
    "report": 0, 
-   "role": "All", 
+   "role": "Administrator", 
    "set_user_permissions": 0, 
    "submit": 0, 
    "write": 1
